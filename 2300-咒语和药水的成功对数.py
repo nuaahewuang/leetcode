@@ -22,14 +22,14 @@ class Solution(object):
         len_p=len(potions)
         for spell in spells:    # 二分法查找
             left, right= 0, len_p - 1
-            mid=left+(right-left)//2
+            mid=left+(right-left) // 2
             while left<=right:  # 最终的:len_p-left
                if spell*potions[mid] >= success:
                    right=mid-1
-                   mid=(left+right)//2
+                   mid=(left+right) // 2
                else:
                    left=mid+1
-                   mid=(left+right)//2
+                   mid=(left+right) // 2
             pairs.append(len_p - left)
         
         return pairs
